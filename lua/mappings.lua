@@ -25,7 +25,7 @@ map("n", "<tab>", function()
   vim.api.nvim_set_current_buf(vim.t.bufs[current_tab])
 end, { desc = "Cycle between last two tabs" })
 
-vim.keymap.set("n", "<leader>d", function()
+vim.keymap.set("n", "<leader>a", function()
   local buf = vim.api.nvim_get_current_buf()
   vim.notify("Current buffer: " .. buf, vim.log.levels.INFO)
 end, { desc = "Debug buffer id" })
