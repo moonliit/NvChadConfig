@@ -9,14 +9,14 @@ M.base_30 = {
   black            = "#2f1f31", -- base background
   darker_black     = "#15151a", -- tree background
   black2           = "#352433", -- statusbar bg color
-  one_bg           = "#2f1f31", -- highlight in tree
+  one_bg           = "#2f1f31", -- highlight in tree (why)
   one_bg2          = "#352433", -- statusbar bg color ?
   one_bg3          = "#3a2738", -- tree file colors
-  grey             = "#6e6e76",
+  grey             = "#6e6e76", -- sideline thing
   grey_fg          = "#15f371", -- maps to @comment by default
   grey_fg2         = "#7aaeb0",
   light_grey       = "#9fd6d8",
-  line             = "#262629", -- separators / indent guides
+  line             = "#8a4bbf", -- "#262629", -- separators / indent guides
   selection        = "#2f4f73",
   selection_strong = "#355b87",
   comment          = "#15f371",
@@ -39,7 +39,7 @@ M.base_30 = {
   statusline_bg    = "#8a4bbf",
   lightbg          = "#352433",
   pmenu_bg         = "#19161b",
-  folder_bg        = "#9fd6d8", --"#3a2738",
+  folder_bg        = "#9fd6d8",
 }
 
 -- base_16 mapping that follows the semantic table you pasted.
@@ -107,6 +107,7 @@ M.polish_hl = {
     ["@keyword"]           = { fg = M.base_30.pink },                 -- base0E
     ["@conditional"]       = { fg = M.base_30.pink },
     ["@keyword.repeat"]    = { fg = M.base_30.pink },
+    ["@keyword.exception"] = { fg = M.base_30.pink },
     ["@repeat"]            = { fg = M.base_30.pink },
     ["@type"]              = { fg = M.base_30.green },                -- base0A
     ["@type.builtin"]      = { fg = M.base_30.blue },
@@ -146,6 +147,10 @@ M.polish = function()
   hl(0, "PmenuSel", { bg = c.selection_strong, fg = c.white })
   hl(0, "TabLine", { bg = c.line_bg, fg = c.grey_fg2 })
   hl(0, "TabLineSel", { bg = c.statusline_bg, fg = c.white })
+
+  -- In your config (init.lua or chadrc.lua polish section)
+  hl(0, "WinSeparator", { fg = "#d0a3ff", bg = "NONE" })
+  hl(0, "VertSplit", { fg = "#d0a3ff", bg = "NONE" })
 
   -- diagnostics: undercurl coloring
   hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = c.red })

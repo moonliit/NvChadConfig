@@ -8,10 +8,22 @@ local M = {}
 M.base46 = {
 	theme = "nonbinary-dark",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  hl_override = {
+    Pmenu = { bg = "black2" },
+    -- Pmenu = { bg = "#ffffff" }, this works too
+        
+    -- lighten or darken base46 theme variable
+    -- this will use the black color from base46.theme & lighten it by 2x
+    -- negative number will darken it
+    Normal = {
+      bg = { "black", 2 }
+    },
+
+    -- mix colors, mixes black/blue from your theme by 10%
+    PmenuSel = {
+      bg = { "black", "blue", 10 }
+    },
+  },
 }
 
 -- M.nvdash = { load_on_startup = true }
