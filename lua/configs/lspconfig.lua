@@ -11,6 +11,6 @@ local servers = {
   "lua_ls"
 }
 
-vim.lsp.enable(servers)
+--vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers 
